@@ -3,6 +3,7 @@ title: "Reproducible Research: Peer Assessment 1"
 author: "Victoria Hunt"
 date: "Saturday, November 15, 2014"
 output: html_document
+keep_md: true
 ---
 
 
