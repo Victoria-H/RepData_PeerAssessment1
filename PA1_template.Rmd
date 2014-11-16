@@ -55,7 +55,7 @@ xyplot(steps~interval, data = interval, type='l',main="Average steps over a day"
 maxsteps<-interval$interval[which.max(interval$steps)]
 paste("interval containg max. steps on average ", maxsteps)
 ```
-
+![Time series 1](FiguresREP/AVERAGE ACTIVITY.png)
 
 
 ###Imputing missing values
@@ -94,7 +94,7 @@ paste("mean ",xbar2,"   median ",M2)
 
 
 ```
-
+![Histogram 2](FiguresREP/HIST filled data.png)
 In the histogram we can now see that all 61 days have been graphed. The days that we filled with the mean values obviously increased the frequency of the bar containing the mean.
 
 The mean is obviously the same as previously calculated, the median is now identical to the mean (which is not so surprising as we have replaced our 8 missing days with the mean values)
@@ -122,7 +122,7 @@ xyplot(steps~interval |factor(WEEKEND), data = interval2, type='l',layout=c(1,2)
 ## again using a more logical scale.
 ## xyplot(steps~time |factor(WEEKEND), data = interval2, type='l',layout=c(1,2))
 ```
-
+![Weekdays Weekends 2](FiguresREP/WEEKEND WEEKDAY.png)
 We can see that on weekdays activity is reduced during working hours, but there is a peak around 8 o'clock. At the weekend activity is more evenly distributed throughout the day.
 
 
