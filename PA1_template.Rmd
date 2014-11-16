@@ -30,7 +30,7 @@ interval$time<-interval$interval%/%100+interval$interval%%100/60 ##adds a column
 
 ###What is mean total number of steps taken per day?
 
-```{r MEAN TOTAL STEPS A DAY, echo=TRUE,comment="show"}
+```{r HIST MEAN TOTAL STEPS A DAY, echo=TRUE,comment="show",fig.path='FiguresREP/'}
 ## 1.Make a histogram of the total number of steps taken each day
 hist(daily$steps,breaks="FD", main="Histogram of total steps a day", xlab="steps")
 ## 2.Calculate and report the mean and median total number of steps taken per day
@@ -42,7 +42,7 @@ paste("mean ",xbar,"   median ",M)
 
    
 ###What is the average daily activity pattern?
-```{r AVERAGE ACTIVITY, echo=TRUE, comment="show",warning=FALSE}
+```{r AVERAGE ACTIVITY, echo=TRUE, comment="show",warning=FALSE,fig.path='FiguresREP/'}
 ## 1. Make a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
 library(lattice) ##requires the lattice package
@@ -84,7 +84,7 @@ for(i in 1:length(datafilled$steps)) {
 
 Histogram and mean, median from the 'filled in' data
 
-```{r RECALCULATE, echo=TRUE, comment="show" }
+```{r HIST filled data, echo=TRUE, comment="show",fig.path='FiguresREP/' }
 ## 4.Make a histogram of the total number of steps taken each day and calculate and report the mean and median total number of steps taken per day
 daily2<-ddply(datafilled,.(date),colwise(sum))
 hist(daily2$steps,breaks="FD", main="Histogram of total steps a day", xlab="steps")
@@ -100,7 +100,7 @@ In the histogram we can now see that all 61 days have been graphed. The days tha
 The mean is obviously the same as previously calculated, the median is now identical to the mean (which is not so surprising as we have replaced our 8 missing days with the mean values)
 
 ###Are there differences in activity patterns between weekdays and weekends?
-```{r WEEKEND, echo=TRUE, comment="show"}
+```{r WEEKEND WEEKDAY, echo=TRUE, comment="show",fig.path='FiguresREP/'}
 ## 1.Create a new factor variable in the dataset with two levels - "weekday" and "weekend"
 datafilled$weekend<-"weekday"
 for (i in 1:length(datafilled$weekend)) {
